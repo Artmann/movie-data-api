@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "movie-data-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-01",
+  "observability": { "enabled": true },
+  "durable_objects": {
+    "bindings": [{ "name": "METADATA_CACHE", "class_name": "MetadataCache" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["MetadataCache"] }]
+}
